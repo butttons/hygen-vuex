@@ -1,6 +1,6 @@
 {
     "name": "hygen-vuex",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A hygen package for vuex4",
     "main": "index.js",
     "keywords": [
@@ -12,5 +12,9 @@
         "vuex4"
     ],
     "author": "butttons",
-    "license": "MIT"
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/butttons/hygen-vuex"
+    }
 }
