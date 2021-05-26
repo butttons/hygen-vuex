@@ -1,0 +1,16 @@
+{
+    "name": "hygen-vuex",
+    "version": "1.0.0",
+    "description": "A hygen package for vuex4",
+    "main": "index.js",
+    "keywords": [
+        "hygen",
+        "generator",
+        "boilerplate",
+        "vue",
+        "vuex",
+        "vuex4"
+    ],
+    "author": "butttons",
+    "license": "MIT"
+}
