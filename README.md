@@ -1,17 +1,18 @@
 # Hygen Vuex: Quick scaffolding for vuex 4
 
-### Prerequisites:
+## Prerequisites:
 
 -   [hygen](https://github.com/jondot/hygen) - `npm i -g hygen`
--   [hygen-add](https://github.com/jondot/hygen-add) - `npm i -g hygen-add`
 
-### Installation:
+## Installation:
 
--   `hygen-add vuex`
+`npm i hygen-vuex --save-dev && cp -R ./node_modules/hygen-vuex/_templates ./_templates`
 
-### Usage:
+###### `hygen-add` package does not seem to be functional.
 
-#### Generator:
+## Usage:
+
+### Generator:
 
 -   To initialize a new vuex store, use the `init` generator: `hygen vuex init`. This will create 3 files:
     -   `store/index.ts` - Main glue file for all modules and types.
@@ -25,7 +26,7 @@
         -   Add the `ModuleActions` to the `RootActions` intersection type.
         -   Add the `ModuleGetters` to the `RootGetters` intersection type.
 
-#### Helpers and `useStore()`:
+### Helpers and `useStore()`:
 
 -   Use the `useStore()` function from the `store/index.ts` file to consume the store.
 -   Create helpers using the `useHelpers()` function from `store/helpers.ts` file. `useHelpers` returns these following utilities:
@@ -35,7 +36,7 @@
     -   `mapMutations(record: Record<string, keyof RootMutations>)` - Returns a record with mapped mutations.
     -   `mapGetters(record: Record<string, keyof RootGetters>)` - Returns a record with mapped getters.
 
-##### Example:
+#### Example:
 
 `auth/auth.ts`:
 
@@ -111,7 +112,7 @@ await login();
 isAuthenticated.value;
 ```
 
-### Caveats:
+## Caveats:
 
 1. Helper functions are designed to work with modules only, not the root store.
 2. No support for namespaced modules. I recently discovered [template string type improvements](https://devblogs.microsoft.com/typescript/announcing-typescript-4-3-rc/#template-string-type-improvements). Will probably release an updated version with similar function signatures to the official vuex module for the helpers.
