@@ -3,7 +3,7 @@ to: src/store/helpers.ts
 ---
 import { computed, ComputedRef } from 'vue';
 import {
-    ModuleNames,
+    ModuleName,
     RootActions,
     RootGetters,
     RootMutations,
@@ -12,10 +12,10 @@ import {
 } from './index';
 
 export const createHelpers = <S extends Store>(store: Store) => {
-    const storeModuleKeys = (module: ModuleNames) =>
+    const storeModuleKeys = (module: ModuleName) =>
         Object.keys(store.state[module]);
 
-    const mapState = <M extends ModuleNames, K extends keyof S['state'][M]>(
+    const mapState = <M extends ModuleName, K extends keyof S['state'][M]>(
         module: M,
         keys: K[],
     ) => {
@@ -30,7 +30,7 @@ export const createHelpers = <S extends Store>(store: Store) => {
     };
 
     const mapStateStatic = <
-        M extends ModuleNames,
+        M extends ModuleName,
         K extends keyof S['state'][M]
     >(
         module: M,

@@ -1,5 +1,5 @@
 ---
-to: src/store/index.example.ts
+to: src/store/index.ts
 ---
 import { createLogger, createStore } from 'vuex';
 import { TypedStore } from './typed-vuex';
@@ -11,7 +11,7 @@ export type RootGetters = {}
 export interface ModuleTree {
 
 }
-
+export type ModuleName = keyof ModuleTree;
 export type Store = TypedStore<
     RootState,
     RootMutations,
@@ -31,4 +31,3 @@ export const store = createStore<RootState>({
 });
 
 export const useStore = () => store as Store;
-useStore();
